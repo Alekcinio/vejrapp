@@ -78,7 +78,20 @@ def draw():
     text_surface = font.render(text, True, (0, 0, 0))
     screen.blit(text_surface, (10, 50))
 
-    pygame.display.update()
+    temp_text = f"Temperatur: {json['temperature']}°C"
+    temp_surface = font.render(temp_text, True, (0, 0, 0))
+    screen.blit(temp_surface, (15, 90))
+
+    gameDisplay=pygame.display.set_mode(display_width, display_height)
+    pygame.display.set_caption('cloud')
+
+
+    cloudimg=pygame.image.load('Partlycloud.png')
+    def car(x,y):
+        gameDisplay.blit(cloudimg,(x,y))
+
+        x=(display_width * 0.45)
+        y=(display_height * 0.8)
 
 setup()
 
